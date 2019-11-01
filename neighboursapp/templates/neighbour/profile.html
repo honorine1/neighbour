@@ -1,0 +1,66 @@
+{%extends "neighbour/base.html"%}
+{% include 'navbar.html'%}
+{% block content %}
+
+<div class="container">
+  {% if profile%}
+
+  {%for profile in profile%}
+  <div class="row" style="padding:20px">
+   <h1 style="padding-left:200px;padding-bottom:20px;">Personal details</h1>
+<div class="col-md-2"></div>
+<div class="col-md-8">
+   <div class="card-group">
+        <div class="card">
+                <!-- <img class="center-block img-responsive img-circle" src="{{profile.profile_pic.url}}" alt="" style="width:200px; height:250px"> -->
+          <img class="card-img-top" src="{{profile.profile_pic.url}}"style="width:500px; height:350px" alt="Card image cap"  >
+          <div class="card-body" style="padding-left:100px;">
+             <h2 class="card-title"><strong>username:</strong>{{profile.user.username}}</strong></h2>
+             <h3 class="card-text"><strong>biographie:</strong>{{profile.bio}}</h3>
+             <h3 class="card-text"><strong>Neighbourhood:</strong>{{profile.neighbourhoodName}}</h3>
+             <h3 class="card-text"><strong>contact:</strong>{{profile.contact}}</h3>
+             <h3 class="card-text"><strong>Location:</strong>{{profile.general_loc}}</h3>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <a class="btn btn-sm btn-primary" href="{% url 'update_profile' %}"> Update Profile</a>
+          </div>
+          
+        </div>
+    <!-- <div class="col-md-4">
+      <img class="center-block img-responsive img-circle" src="{{profile.profile_pic.url}}" alt="" style="width:200px; height:250px">
+    </div> -->
+    
+    {%endfor%}
+  </div>
+  </div>
+  {%else%}
+
+
+  <div class="card">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body" styles="width:50px;">
+
+      <h3 class="card-text">complete your profile</h3>
+      <a class="btn btn-sm btn-primary" href="{% url 'update_profile' %}"> complete Profile</a>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+
+
+
+
+{%endif%}
+</div>
+
+
+<!-- </div> -->
+
+<!-- <div class="col-md-2"></div>  -->
+
+</div>
+
+
+{%endblock%}
