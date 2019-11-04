@@ -9,7 +9,7 @@ class ProfileForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ['user']
+        exclude = ['user','profile']
         
 # class CommentsForm(forms.ModelForm):
 #     class Meta:
