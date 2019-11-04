@@ -54,6 +54,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'neighbourspro.urls'
+LOGIN_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
